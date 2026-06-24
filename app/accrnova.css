@@ -1129,3 +1129,96 @@ html, body {
   .ac-mission-grid { grid-template-columns: 1fr; }
   .ac-hero-body { font-size: 16px; }
 }
+
+/* ── SOCIAL & MICROBLOG ─────────────────────────────────────── */
+.ac-social-section {
+  padding: 100px 0;
+  background: linear-gradient(180deg, var(--ac-black) 0%, var(--ac-surface) 100%);
+  position: relative;
+}
+.ac-social-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.ac-social-header { text-align: center; margin-bottom: 60px; }
+.ac-social-title {
+  font-family: var(--font-display); font-size: clamp(36px,5vw,56px);
+  font-weight: 700; color: var(--ac-white); letter-spacing: -0.03em; margin: 0 0 16px;
+}
+.ac-social-sub { font-size: 17px; color: var(--ac-muted); max-width: 560px; margin: 0 auto; line-height: 1.7; }
+
+/* Platform cards */
+.ac-social-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-bottom: 64px; }
+@media (max-width: 900px) { .ac-social-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 540px) { .ac-social-grid { grid-template-columns: 1fr; } }
+
+.ac-social-card {
+  display: flex; flex-direction: column; gap: 14px;
+  background: var(--ac-card); border: 1px solid var(--ac-border);
+  border-radius: 16px; padding: 28px 24px;
+  text-decoration: none; color: inherit; position: relative;
+  transition: all 0.25s ease; overflow: hidden;
+}
+.ac-social-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--social-accent, var(--ac-gold)); opacity: 0.7;
+  transition: opacity 0.25s;
+}
+.ac-social-card:not(.ac-social-coming):hover {
+  border-color: var(--social-accent, var(--ac-gold));
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+.ac-social-card:not(.ac-social-coming):hover::before { opacity: 1; }
+.ac-social-coming { opacity: 0.6; cursor: default; }
+
+.ac-social-icon-wrap {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(255,255,255,0.06); border: 1px solid var(--ac-border);
+  display: flex; align-items: center; justify-content: center;
+}
+.ac-social-icon { font-size: 18px; font-weight: 800; color: var(--ac-white); }
+.ac-social-platform { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--ac-white); margin: 0; }
+.ac-social-handle { font-size: 13px; color: var(--ac-gold); margin: 2px 0 0; font-weight: 600; }
+.ac-social-desc { font-size: 13px; color: var(--ac-muted); line-height: 1.55; margin: 0; flex: 1; }
+.ac-social-soon {
+  display: inline-block; padding: 4px 10px; border-radius: 100px;
+  background: rgba(201,149,42,0.1); color: var(--ac-gold);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  border: 1px solid rgba(201,149,42,0.2); align-self: flex-start;
+}
+.ac-social-arrow { font-size: 18px; color: var(--ac-gold); align-self: flex-end; }
+
+/* Microblog feed */
+.ac-microblog {
+  background: var(--ac-card); border: 1px solid var(--ac-border);
+  border-radius: 20px; padding: 48px;
+}
+.ac-microblog-title {
+  font-family: var(--font-display); font-size: 28px; font-weight: 700;
+  color: var(--ac-white); margin: 0 0 32px; letter-spacing: -0.02em;
+}
+.ac-microblog-feed { display: flex; flex-direction: column; gap: 24px; }
+.ac-microblog-post {
+  padding: 24px; background: rgba(255,255,255,0.02);
+  border: 1px solid var(--ac-border); border-radius: 12px;
+  transition: border-color 0.2s;
+}
+.ac-microblog-post:hover { border-color: rgba(201,149,42,0.2); }
+.ac-microblog-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.ac-microblog-badge {
+  padding: 3px 10px; border-radius: 100px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+}
+.ac-microblog-entity { font-size: 13px; font-weight: 700; color: var(--ac-white); }
+.ac-microblog-time { font-size: 12px; color: var(--ac-muted); margin-left: auto; }
+.ac-microblog-text { font-size: 15px; color: var(--ac-muted); line-height: 1.7; margin: 0; }
+.ac-microblog-note { font-size: 13px; color: var(--ac-muted); text-align: center; margin-top: 32px; font-style: italic; }
+
+/* Companies grid — allow 3-col for 6 companies */
+@media (min-width: 1024px) { .ac-companies-grid { grid-template-columns: repeat(3,1fr) !important; } }
+.ac-company-coming { position: relative; opacity: 0.7; }
+.ac-company-coming-badge {
+  position: absolute; top: 16px; right: 16px;
+  padding: 4px 10px; border-radius: 100px;
+  background: rgba(201,149,42,0.1); color: var(--ac-gold);
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+  border: 1px solid rgba(201,149,42,0.2);
+}

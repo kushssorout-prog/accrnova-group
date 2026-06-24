@@ -29,8 +29,8 @@ const companies = [
     headline: "AI Governance for the Enterprise",
     body: "The home of the Axiom platform — deterministic AI governance infrastructure for law firms, financial services, and regulated industries globally.",
     tags: ["Axiom Core", "Axiom Legal", "Axiom Health", "Axiom Safe"],
-    ctaLabel: "Explore Axiom →",
-    ctaHref: "https://axiom-landing-d1wced.camelai.app",
+    ctaLabel: "Explore →",
+    ctaHref: "https://pvt.accrnova.uk",
   },
   {
     id: "aryasolon",
@@ -42,7 +42,7 @@ const companies = [
     body: "Premier corporate law firm headquartered in Bangalore. 100% CLM accuracy, multi-stakeholder expertise, and strategic corporate advisory for businesses of all scales.",
     tags: ["CLM", "Corporate Advisory", "Due Diligence", "Secretarial"],
     ctaLabel: "Visit AryaSolon →",
-    ctaHref: "https://aryasolon-corporate-law-clm.vercel.app/",
+    ctaHref: "https://aryasolon.accrnova.uk",
   },
   {
     id: "zenithustra",
@@ -54,7 +54,7 @@ const companies = [
     body: "End-to-end project delivery across agritech management systems, fitness & gym platforms, custom app portfolios, and physical infrastructure development.",
     tags: ["AgriTech", "Gym Management", "App Development", "Physical Projects"],
     ctaLabel: "Explore Zenithustra →",
-    ctaHref: "https://zenithustra-d1wced.camelai.app",
+    ctaHref: "https://zenithustra.accrnova.uk",
   },
   {
     id: "qcommerce",
@@ -65,8 +65,33 @@ const companies = [
     headline: "Intelligence. Delivered.",
     body: "AI-governed ecommerce platform offering personalised product recommendations, price-arbitraged shipping, and the consumer-facing Axiom Safe product suite.",
     tags: ["Axiom Safe", "Intelligence Reports", "Advisory", "Premium Bundles"],
-    ctaLabel: "Shop Q Commerce →",
-    ctaHref: "https://q-commerce-d1wced.camelai.app",
+    ctaLabel: "Coming Soon",
+    ctaHref: "#coming-soon",
+    comingSoon: true,
+  },
+  {
+    id: "lamp",
+    accent: "amber",
+    monogram: "LL",
+    name: "Lamp of Life Accelerator",
+    type: "Deep Tech · Accelerator",
+    headline: "Illuminating the Next Generation of Deep Technology.",
+    body: "A deep tech accelerator in Bangalore built on life principles. Backing founders at the frontier of qualitative finance and next-generation social intelligence.",
+    tags: ["Qualitative Finance", "Social Media Tech", "Deep Tech", "Bangalore"],
+    ctaLabel: "Explore Lamp →",
+    ctaHref: "https://lamp.accrnova.uk",
+  },
+  {
+    id: "robforge",
+    accent: "violet",
+    monogram: "RF",
+    name: "Robforge",
+    type: "Technology",
+    headline: "Forging the Future of Digital Infrastructure.",
+    body: "A technology venture building next-generation digital products and platforms under the ACCRNOVA Group umbrella.",
+    tags: ["Web Development", "Digital Products", "Technology"],
+    ctaLabel: "Visit Robforge →",
+    ctaHref: "https://robforge.accrnova.uk",
   },
 ];
 
@@ -167,6 +192,7 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#companies">Companies</a>
           <a href="#ventures">Ventures</a>
+          <a href="#social">Social</a>
           <a href="#contact">Contact</a>
           <a href="#contact" className="ac-nav-cta">Connect With Us →</a>
         </div>
@@ -324,7 +350,7 @@ export default function Home() {
               100% Pre-flight compliance · 0 ungoverned AI sessions · Ed25519 audit trail
             </div>
             <a
-              href="https://axiom-landing-d1wced.camelai.app"
+              href="https://safe.accrnova.uk"
               target="_blank"
               rel="noopener noreferrer"
               className="ac-btn-teal"
@@ -417,6 +443,141 @@ export default function Home() {
                 himanshu.s.sorout@gmail.com
               </a>
             </span>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ── SOCIAL & MICROBLOG ── */}
+      <section id="social" className="ac-social-section">
+        <div className="ac-social-inner">
+          <div className="ac-social-header">
+            <p className="ac-eyebrow">Follow the Group</p>
+            <h2 className="ac-social-title">ACCRNOVA Across Platforms</h2>
+            <p className="ac-social-sub">
+              Stay connected with ACCRNOVA Group entities — thought leadership,
+              product updates, and industry insights across every channel.
+            </p>
+          </div>
+
+          {/* Platform cards */}
+          <div className="ac-social-grid">
+            {[
+              {
+                platform: "LinkedIn",
+                icon: "in",
+                accent: "#0A66C2",
+                handle: "@ACCRNOVAGroup",
+                desc: "Corporate announcements, leadership insights, and industry commentary.",
+                url: "https://linkedin.com",
+                comingSoon: false,
+              },
+              {
+                platform: "Instagram",
+                icon: "◈",
+                accent: "#E1306C",
+                handle: "@accrnova",
+                desc: "Behind the scenes, product showcases, and group culture.",
+                url: "#",
+                comingSoon: true,
+              },
+              {
+                platform: "X / Twitter",
+                icon: "𝕏",
+                accent: "#000000",
+                handle: "@ACCRNOVAGroup",
+                desc: "Real-time commentary, quick insights, and ecosystem news.",
+                url: "#",
+                comingSoon: true,
+              },
+              {
+                platform: "Facebook",
+                icon: "f",
+                accent: "#1877F2",
+                handle: "ACCRNOVA Group",
+                desc: "Community updates, events, and long-form content.",
+                url: "#",
+                comingSoon: true,
+              },
+            ].map((s) => (
+              <a
+                key={s.platform}
+                href={s.comingSoon ? undefined : s.url}
+                className={`ac-social-card${s.comingSoon ? " ac-social-coming" : ""}`}
+                style={{ "--social-accent": s.accent } as React.CSSProperties}
+                target={s.comingSoon ? undefined : "_blank"}
+                rel="noopener noreferrer"
+              >
+                <div className="ac-social-icon-wrap">
+                  <span className="ac-social-icon">{s.icon}</span>
+                </div>
+                <div className="ac-social-info">
+                  <p className="ac-social-platform">{s.platform}</p>
+                  <p className="ac-social-handle">{s.handle}</p>
+                  <p className="ac-social-desc">{s.desc}</p>
+                </div>
+                {s.comingSoon && (
+                  <span className="ac-social-soon">Coming Soon</span>
+                )}
+                {!s.comingSoon && (
+                  <span className="ac-social-arrow">→</span>
+                )}
+              </a>
+            ))}
+          </div>
+
+          {/* Microblog / Latest Updates */}
+          <div className="ac-microblog">
+            <h3 className="ac-microblog-title">Latest from the Group</h3>
+            <div className="ac-microblog-feed">
+              {[
+                {
+                  entity: "ACCRNOVA Group",
+                  badge: "Announcement",
+                  badgeColor: "var(--ac-gold)",
+                  time: "Today",
+                  text: "ACCRNOVA Pvt Ltd is now live at pvt.accrnova.uk — full-service AI solutions, software development, and machine learning consultancy for enterprise and consumer clients.",
+                },
+                {
+                  entity: "AryaSolon",
+                  badge: "Legal Insight",
+                  badgeColor: "var(--ac-gold)",
+                  time: "This week",
+                  text: "The ABA's latest guidance on AI-generated legal content reinforces what we've always known: human oversight is not optional. Our CLM workflows are built with this principle at their core.",
+                },
+                {
+                  entity: "Zenithustra",
+                  badge: "Operations",
+                  badgeColor: "var(--ac-teal)",
+                  time: "This week",
+                  text: "Active research across Haryana and NCR corridors — agricultural land studies, gym infrastructure assessment, and construction feasibility underway.",
+                },
+                {
+                  entity: "Lamp of Life",
+                  badge: "Accelerator",
+                  badgeColor: "var(--ac-violet)",
+                  time: "Coming soon",
+                  text: "Cohort 1 applications open Q3 2026. We are accepting founders building at the intersection of qualitative finance and next-generation social infrastructure. Bangalore-based.",
+                },
+              ].map((post, i) => (
+                <div key={i} className="ac-microblog-post">
+                  <div className="ac-microblog-meta">
+                    <span
+                      className="ac-microblog-badge"
+                      style={{ background: post.badgeColor + "22", color: post.badgeColor, border: `1px solid ${post.badgeColor}44` }}
+                    >
+                      {post.badge}
+                    </span>
+                    <span className="ac-microblog-entity">{post.entity}</span>
+                    <span className="ac-microblog-time">{post.time}</span>
+                  </div>
+                  <p className="ac-microblog-text">{post.text}</p>
+                </div>
+              ))}
+            </div>
+            <p className="ac-microblog-note">
+              Full social handles will be added shortly. Follow along for group updates across all entities.
+            </p>
           </div>
         </div>
       </section>
@@ -539,28 +700,28 @@ export default function Home() {
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
             <a
-              href="https://axiom-landing-d1wced.camelai.app"
+              href="https://safe.accrnova.uk"
               target="_blank"
               rel="noopener noreferrer"
             >
               ACCRNOVA Pvt Ltd
             </a>
             <a
-              href="https://aryasolon-corporate-law-clm.vercel.app/"
+              href="https://aryasolon.accrnova.uk"
               target="_blank"
               rel="noopener noreferrer"
             >
               AryaSolon
             </a>
             <a
-              href="https://zenithustra-d1wced.camelai.app"
+              href="https://zenithustra.accrnova.uk"
               target="_blank"
               rel="noopener noreferrer"
             >
               Zenithustra
             </a>
             <a
-              href="https://q-commerce-d1wced.camelai.app"
+              href="#coming-soon"
               target="_blank"
               rel="noopener noreferrer"
             >
