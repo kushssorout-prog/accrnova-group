@@ -32,6 +32,18 @@ const companies = [
     ctaLabel: "Explore →",
     ctaHref: "https://pvt.accrnova.uk",
   },
+    {
+    id: "safe",
+    accent: "teal",
+    monogram: "S+",
+    name: "ACCRNOVA Safe Plus",
+    type: "Consumer AI Protection",
+    headline: "Personal & Family AI Safety. Free to Start.",
+    body: "Browser-based AI protection for individuals, professionals, and families. Guards against PII leaks, work secret exposure, and health data sharing across ChatGPT, Claude, Gemini and more.",
+    tags: ["Personal", "Family", "Browser Extension", "Privacy"],
+    ctaLabel: "Try Safe Plus →",
+    ctaHref: "https://safe.accrnova.uk",
+  },
   {
     id: "aryasolon",
     accent: "gold",
